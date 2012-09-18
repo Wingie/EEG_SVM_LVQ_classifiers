@@ -1,0 +1,15 @@
+%1,6,11,16,21
+clear all
+clc
+%my_lvq(1,6)
+%svm2(class1,class2, channel)
+%getsubject(subject,channel)
+
+
+ch = 1
+[P, Tc , targets] = getsubject(1,ch);
+
+%% get svm model from first subj and test with itself
+[acc, model] = svm3(P,Tc);
+[P, Tc , targets] = getsubject(2,ch);
+[predict_label, accuracy, dec_values] = svmpredict(Tc,P, model);

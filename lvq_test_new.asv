@@ -1,0 +1,10 @@
+
+for i = i:1
+[P, Tc , targets] = getsubj2(n);
+net = newlvq(minmax(P),30,[0.2 0.2 0.2 0.2 0.2],0.01,'learnlv1');
+net.trainParam.epochs = 100000;
+[net,tr,Y,E,Pf,Af] = train(net,P,targets);
+Y = sim(net,P);
+Yc = vec2ind(Y);
+c = confusion(targets,Y);
+acc = (1-c)*100;

@@ -1,0 +1,22 @@
+%1,6,11,16,21
+clear all
+clc
+%my_lvq(1,6)
+%svm2(class1,class2, channel)
+%getsubject(subject no,channel)
+
+
+% %% ANN For one subjects on all channnels
+% for i = 1:1:5
+% [P,Tc, targets] = getsubject(1,i);
+% P = P'; % for nn only
+% acc(i) = ann_multi(P,targets);
+% end
+% acc
+% [m,i] = max(acc)
+
+%% SVM for one subject all channels
+for i = 1:1:5
+[P,Tc, targets] = getsubject(1,i);
+svm
+end

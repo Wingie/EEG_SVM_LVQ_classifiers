@@ -1,0 +1,30 @@
+%load eegdata
+
+%Extract and plot one trial from subject 1 
+
+task1 = data{1}{4};
+t = task1(1,:);
+t = t(1:500);
+set = reshape(t,100,5);
+hp = spectrum.periodogram('hamming');
+hpopts = psdopts(hp,set);
+set(hpopts,'Fs',Fs,'SpectrumType','twosided','centerdc',true);
+
+%calculate features
+mn = mean(set);
+vr = var(set);
+sk = skewness(set);
+kr = kurtosis(set);
+rms = sqrt(sum(set.*conj(set))/size(set,1));
+
+
+%features go down as one batch of i/p
+ft = [mn;vr;sk;kr;rms];
+
+
+
+
+
+
+
+

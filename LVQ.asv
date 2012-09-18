@@ -1,0 +1,15 @@
+%LVQ
+P = [-3 -2 -2 0 0 0 0 2 2 3; 0 1 -1 2 1 -1 -2 1 -1 0];
+
+Tc = [1 1 1 1 1 2 2 2 2 2];
+T = ind2vec(Tc);
+targets = full(T);
+
+net = newlvq(P,4,[.5 .5]);
+ 
+
+net.trainParam.epochs = 150;
+net = train(net,P,T);
+
+Y = sim(net,P);
+Yc = vec2ind(Y)

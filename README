@@ -1,0 +1,28 @@
+These ar MATLAB codes that an be used for learning more about Artificial Intelligence usage for Classifying and understanding more about EEG waveforms in the context of classifying them for real time analysis.
+
+A list of the contents in no particular order follows.
+
+.obj files are the trained SVM models.
+.dat files are matlab variables - LVQ models and RAW data.
+
+test_pwr.m -> sample code to perform time domain operations on a waveform. A sinusoidal waveform's RMS value is calculated.
+svm3.m	-> matlab function that performs training of the dataset given to it and returns accuracy.
+svm2.m -> this functionfirst construct smaller windows of operation and constructs in own test classes for training the given data.
+svm_test.m -> performs training and testing of the given heart ECG data.
+svm.m -> performs 5 class multiclassification data set construction as well as training, and returns the model created.
+svm_gui -> a gui mode for real-time training of the SVM models. Its just a wrapper to the rest of the functions in this project.
+study2-4.m -> different combination of the data being given to the above function for a more detailed data analysis.
+study_voting.m -> this uses majority voting to increase the possibility of getting a correct classification.
+signal_eeg.m -> loads EEG data and trains the SVM/LVQ classifier.
+myeeg.m -> various feature extractions before feeeing data into into my classifier.
+my_lvq.m -> preparing and running same data to the LVQ Neural Network Models.
+make.m -> run this to compile the SVM C libraries for MATLAB
+lvq_*.m -> all these files are essentially variations of feeding in data and testing them onto an LVW model instead of the SVM one. each one is a slightly different way of doing the same problem. 
+gui_adc.m -> real time reading of data from COM0 or the arduino connected to the computer. Arduino keeps outputting numbers and \n on its serial port.
+getsubj,getfeatures.m -> extracting data from the .dat files for use in the algorithms.
+eegdata_extract.m, generate_dataset -> extracting reshapping and visualizing the data that i have collected.
+ann_multi.m -> a simple Artificial neural network that TAKES aggges to train.
+adc.m - getting MATlab to read from the computers ADC.
+
+
+

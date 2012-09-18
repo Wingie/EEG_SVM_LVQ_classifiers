@@ -1,0 +1,17 @@
+function net = create_pr_net(inputs,targets)
+inputs = P;
+
+% Create Network
+numHiddenNeurons = 75;  % Adjust as desired
+net = newpr(inputs,targets,numHiddenNeurons);
+net.divideParam.trainRatio = 70/100;  % Adjust as desired
+net.divideParam.valRatio = 15/100;  % Adjust as desired
+net.divideParam.testRatio = 15/100;  % Adjust as desired
+
+% Train and Apply Network
+[net,tr] = train(net,inputs,targets);
+outputs = sim(net,inputs);
+
+% Plot
+plotperf(tr)
+plotconfusion(targets,outputs)
